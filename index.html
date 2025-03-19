@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复古3D地形生成器</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #000;
+            color: #fff;
+            font-family: "Courier New", monospace;
+        }
+        #controls {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        .control-group {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="range"] {
+            width: 200px;
+        }
+        #canvas-container {
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div class="control-group">
+            <label for="noiseScale">地形细节</label>
+            <input type="range" id="noiseScale" min="0.01" max="0.1" step="0.01" value="0.05">
+        </div>
+        <div class="control-group">
+            <label for="heightScale">高度</label>
+            <input type="range" id="heightScale" min="1" max="50" step="1" value="20">
+        </div>
+        <div class="control-group">
+            <label for="rotationSpeed">旋转速度</label>
+            <input type="range" id="rotationSpeed" min="0" max="0.1" step="0.001" value="0.005">
+        </div>
+        <div class="control-group">
+            <label for="threshold">对比度</label>
+            <input type="range" id="threshold" min="0" max="255" step="1" value="128">
+        </div>
+    </div>
+    <div id="canvas-container"></div>
+    <script src="sketch.js"></script>
+</body>
+</html> 
